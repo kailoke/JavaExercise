@@ -1,4 +1,4 @@
-package com.F.comparable;
+package com.F.compareTest;
 
 import java.util.Arrays;
 

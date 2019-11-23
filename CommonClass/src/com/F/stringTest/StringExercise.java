@@ -1,4 +1,4 @@
-package com.F.StringTest;
+package com.F.stringTest;
 
 import org.junit.Test;
 

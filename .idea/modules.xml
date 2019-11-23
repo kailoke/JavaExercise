@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Collection/Collection.iml" filepath="$PROJECT_DIR$/Collection/Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/CommonClass/CommonClass.iml" filepath="$PROJECT_DIR$/CommonClass/CommonClass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EnumAnnotationTest/EnumAnnotationTest.iml" filepath="$PROJECT_DIR$/EnumAnnotationTest/EnumAnnotationTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaExcercise.iml" filepath="$PROJECT_DIR$/JavaExcercise.iml" />
       <module fileurl="file://$PROJECT_DIR$/ThreadTest/ThreadTest.iml" filepath="$PROJECT_DIR$/ThreadTest/ThreadTest.iml" />
     </modules>
