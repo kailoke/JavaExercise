@@ -5,11 +5,7 @@ import org.junit.Test;
 import java.util.*;
 
 /**
- *
- *
- *
- *
- * 二、集合框架(容器)
+ * 一、集合框架(容器)
  *  |----Collection接口：单列数据，存储一个一个的对象
  *      |----List接口(继承):存储有序、可重复的数据                <动态数组></动态数组>
  *          |----实现类：ArrayList  LinkedList  Vector
@@ -19,7 +15,7 @@ import java.util.*;
  *  |----Map接口：双列数据，存储具有映射关系“Key-value”对的数据    <键值对></键值对>
  *      |----实现类：HashMap    LinkedHashMap   TreeMap Hashtable Properties
  *
- * 三、Collection接口的中的方法
+ * 二、Collection接口的中的方法,如下
  *
  */
 public class ConnectionTest {

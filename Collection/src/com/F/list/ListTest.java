@@ -4,8 +4,8 @@ import org.junit.Test;
 
 /** List接口 ---  "动态数组"
  *      |----ArrayList  作为List的主要实现类(since 1.2) 线程不安全，效率高   底层是Object[] elementDate
- *      |----LinkedList 同ArrayList一起实现(since 1.2) 线程不安全，效率高   底层是双向链表,适合频繁插入、删除
- *      |----Vector     作为List的古老实现类(since 1.0) 线程安全，效率低     底层是Object[] elementDate
+ *  *      |----LinkedList 同ArrayList一起实现(since 1.2) 线程不安全，效率高   底层是双向链表,适合频繁插入、删除
+ *  *      |----Vector     作为List的古老实现类(since 1.0) 线程安全，效率低     底层是Object[] elementDate
  *
  * 相同点：均实现了List接口，存储数据的特点相同
  *
