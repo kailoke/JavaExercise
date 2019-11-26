@@ -10,8 +10,6 @@ import java.util.Set;
  * 一、LinkedHastSet作为HashSet的子类
  * 二、增加元素时，对每个元素增加 Node previous\Node Next 链表结构
  *  > 对于频繁的遍历操作，LinkedHashSet效率高于HashSet
- *
- *
  */
 public class LinkedHashSetTest {
 
