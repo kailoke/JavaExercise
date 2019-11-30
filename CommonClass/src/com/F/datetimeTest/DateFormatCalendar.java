@@ -1,7 +1,5 @@
 package com.F.datetimeTest;
 
-import com.F.annotation.MyAnnotation;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

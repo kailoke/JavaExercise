@@ -19,7 +19,10 @@ import java.util.List;
  * Object max(Collection, Comparator) \ min(Collection, Comparator)
  * int frequency(Collection,Object)
  * void copy(List dest,List src)  src内容复制到===>dest | IndexOutOfBoundsException
- * boolean replaceAll(
+ * boolean replaceAll(List list,Object old,Object new): 旧值改新
+ *
+ * synchronizedXxxx(Xxxx):返回线程安全的容器
+ *
  */
 public class ConnectionsTest {
     public static void main(String[] args) {
@@ -31,6 +34,7 @@ public class ConnectionsTest {
         list.add(0);
 //        List<Integer> dest = new ArrayList<>(list.size());
         List<Object> dest = Arrays.asList(new Object[list.size()]);
+        System.out.println(dest);   // ↑ Object类空数组
 
         Collections.copy(dest,list);
         System.out.println(dest);
