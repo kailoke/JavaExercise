@@ -1,4 +1,4 @@
-package File_stream;
+package a2_File_RW;
 
 import org.junit.Test;
 
@@ -11,7 +11,7 @@ public class FileReaderTest {
     public void testFileReader(){
         // pathname junitTest相较于module；若是main方法，则相较于project
         // 1.实例化File类对象
-        File file = new File("hello.txt");
+        File file = new File("src/a2_File_RW/hello.txt");
         // 2.实例化节点流(文件流)
         FileReader fr = null;
         try {
@@ -35,4 +35,32 @@ public class FileReaderTest {
         }
 
     }
+
+    @Test
+    public void testFileReaderWithCharArray(){
+        File file = new File("src/a2_File_RW/hello.txt");
+        FileReader fr = null;
+        try {
+            fr = new FileReader(file);
+            char[] cbuf = new char[5];
+            int len;
+            while ( (len = fr.read(cbuf)) != -1){
+                // new String(char[] arr,int offset,int len)
+                System.out.println(new String(cbuf, 0, len));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fr != null)
+                fr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
+
+
 }
