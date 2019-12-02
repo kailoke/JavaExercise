@@ -7,7 +7,14 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
+/** TCP/IP 参考模型
+ * 模型分层：应用层、传输层、网络层、物理+数据链路层
+ *
+ * TCP 传输协议
+ * > 连接可靠：三次握手，四次挥手
+ * > 大数据量传输
+ * > 效率低
+ *
  * 一、客户端
  *  > 1.创建Socket实例，指明PID
  *  > 2.获取Socket实例输出流，用以输出数据

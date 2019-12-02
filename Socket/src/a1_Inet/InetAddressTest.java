@@ -1,10 +1,11 @@
 package a1_Inet;
 
-/** InetAddress
+/** InetAddress java中使用此类代表IP
  *  > IP: Internet Protocol
- *  > DNS: Domain Name Server
+ *  > DNS解析: Domain Name Server
  *  > 域名： www.   .com
  *  > 本地回路地址：127.0.0.1 ---> localhost(域名)
+ *  > 常用：InetAddress.getByName() / InetAddress.getLocalHost() / getHostName() / getHostAddress
  */
 import java.net.InetAddress;
 import java.net.UnknownHostException;

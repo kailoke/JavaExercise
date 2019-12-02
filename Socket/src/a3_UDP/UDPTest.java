@@ -1,10 +1,14 @@
 package a3_UDP;
 
 import org.junit.Test;
-
 import java.io.IOException;
 import java.net.*;
 
+/** UDP 传输协议
+ * > 不可靠，直接发送数据报
+ * > 封装数据报，大小限制<=64K
+ * > 效率高
+ */
 public class UDPTest {
     @Test
     public void sender() throws IOException {

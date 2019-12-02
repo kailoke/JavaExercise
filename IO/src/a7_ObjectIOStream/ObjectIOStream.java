@@ -4,9 +4,10 @@ import org.junit.Test;
 
 import java.io.*;
 
-/** 对象流 将java对象(或data数据流)序列化成与平台无关的二进制数据，从而持久化或网络传输。另一节点获得此数据可以反序列化成对象
+/** 对象流 将java对象(或data数据流)序列化成与平台无关的二进制数据，从而持久化或网络传输;
+ *          另一节点获得此二进制流，就可以反序列化成内存对象
  *  ObjectOutputStream  ObjectInputStream
- *
+ *  不能序列化 static / transient 修饰的变量
  */
 public class ObjectIOStream {
     private String path = "src/a7_ObjectIOStream/";

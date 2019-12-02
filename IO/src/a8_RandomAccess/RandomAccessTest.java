@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 
 /** RandomAccessFile    任意访问文件"内部"
- * > 1.继承于 java.lang.Object，实现了 Input / Output 接口
- * > 2.RandomAccessFile 既可以做输入流，也可做输出流
+ * > 1.继承于 java.lang.Object         实现了 Input / Output 接口
+ * > 2.RandomAccessFile 既可以做输入流，也可做输出流↑[可读可写]
  * > 3.@NotNull access mode
  *      > r
  *      > rw
@@ -17,7 +17,7 @@ import java.io.RandomAccessFile;
  * > 4.作为输出流时，直接修改文件内的内容
  *      > 若写出文件不存在，则创建
  *      > 若写出文件存在，从文件内部头开始覆盖，而不是直接覆盖文件
- * > 5.拥有光标，arf.seek(long seek)
+ * > 5.拥有光标，raf.seek(long seek)
  */
 public class RandomAccessTest {
     String path = "src/a8_RandomAccess/";
@@ -101,25 +101,25 @@ public class RandomAccessTest {
     // 插入文本
     @Test
     public void testInsert(){
-        RandomAccessFile rsf = null;
+        RandomAccessFile raf = null;
         try {
-            rsf = new RandomAccessFile(path + "hello.txt","rw");
-            rsf.seek(3);
+            raf = new RandomAccessFile(path + "hello.txt","rw");
+            raf.seek(3);
             StringBuilder sb = new StringBuilder();
             byte[] buffer = new byte[1024];
             int len;
-            while ((len = rsf.read(buffer)) != -1){
+            while ((len = raf.read(buffer)) != -1){
                sb.append(new String(buffer,0,len));
             }
-            rsf.seek(3);
-            rsf.write("zzz".getBytes());
-            rsf.write(sb.toString().getBytes());
+            raf.seek(3);
+            raf.write("zzz".getBytes());
+            raf.write(sb.toString().getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (rsf != null) {
+            if (raf != null) {
                 try {
-                    rsf.close();
+                    raf.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
