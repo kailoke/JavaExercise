@@ -1,4 +1,4 @@
-package com.F.java;
+package com.F.Exercise;
 
 /** 银行有一个账户
  * 两个储户分别向同一个账户存3000元，每次存 1000 ，分别存3次。

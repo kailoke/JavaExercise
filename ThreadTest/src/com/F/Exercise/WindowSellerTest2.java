@@ -1,4 +1,4 @@
-package com.F.java;
+package com.F.Exercise;
 
 /** 继承Thread类的方式启动多线程
  *  1.synchronized(同步监视器){共享变量相关代码块}

@@ -1,4 +1,4 @@
-package com.F.java;
+package com.F.Exercise;
 
 /** 实现Runnable的方式开启多线程
  *  解决线程安全问题

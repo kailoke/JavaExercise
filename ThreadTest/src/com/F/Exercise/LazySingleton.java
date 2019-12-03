@@ -1,4 +1,4 @@
-package com.F.java;
+package com.F.Exercise;
 
 public class LazySingleton {
     public static void main(String[] args) {
