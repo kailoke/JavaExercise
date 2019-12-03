@@ -14,7 +14,7 @@ public class Person extends Creature<String>
     public Person() {
     }
 
-    private Person(String name) {
+    public Person(String name) {
         this.name = name;
     }
 

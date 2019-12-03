@@ -1,9 +1,7 @@
-package com.F.connection;
+package com.F.collection;
 
 import org.junit.Test;
 
-import javax.sound.midi.Soundbank;
-import javax.tools.ForwardingFileObject;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -39,6 +37,8 @@ public class IteratorTest {
             }
         }
 
+
+
         // 5.0 新增foreach循环，可用于遍历 集合 和 数组
         System.out.println("foreach 替代：");
         for (Object o : coll) {
@@ -53,13 +53,11 @@ public class IteratorTest {
             arr[i] = "GG";
         }
 
-        for (String i : arr
-                ) {
+        for (String i : arr) {
             i = "MM";
         }
 
-        for (String i : arr
-                ) {
+        for (String i : arr) {
             System.out.println(i);
         }
 

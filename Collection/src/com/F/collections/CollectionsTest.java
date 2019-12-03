@@ -1,6 +1,4 @@
-package com.F.connections;
-
-import com.F.set.Person;
+package com.F.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +22,7 @@ import java.util.List;
  * synchronizedXxxx(Xxxx):返回线程安全的容器
  *
  */
-public class ConnectionsTest {
+public class CollectionsTest {
     public static void main(String[] args) {
         List<Integer> list =new ArrayList<>();
         list.add(123);
@@ -36,7 +34,7 @@ public class ConnectionsTest {
         List<Object> dest = Arrays.asList(new Object[list.size()]);
         System.out.println(dest);   // ↑ Object类空数组
 
-        Collections.copy(dest,list);
+        java.util.Collections.copy(dest,list);
         System.out.println(dest);
     }
 }

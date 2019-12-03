@@ -1,9 +1,9 @@
-package com.F.connection;
+package com.F.collection;
 
 import org.junit.Test;
 import java.util.*;
 
-/**
+/** Collection 静态内存数据结构
  * 一、集合框架(容器)
  *  |----Collection接口：单列数据，存储一个一个的对象
  *      |----List接口(继承):存储有序、可重复的数据                <动态数组></动态数组>
@@ -17,7 +17,7 @@ import java.util.*;
  * 二、Collection接口的中的方法,如下
  *
  */
-public class ConnectionTest {
+public class CollectionTest {
 
     @Test
     public void test1(){
