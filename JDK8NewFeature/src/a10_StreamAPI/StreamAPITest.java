@@ -10,11 +10,11 @@ import java.util.stream.Stream;
 /** Stream 对数据的运算
  * 一、特性：
  *  > 1.1 Stream 不会存储元素，因为其本身是对数据进行运算
- *  > 1.2 Stream 不改变源对象，他们返回一个持有结果的新Stream
- *  > 1.3 Stream 中间操作是延迟的，需要等到结果的时候才执行
+ *  > 1.2 Stream 不改变源对象，返回一个持有结果的新Stream
+ *  > 1.3 Stream 中间操作是延迟的，需要等到结果方法的时候才执行
  * 二、执行流程
  *  > 2.1 Stream 的实例化
- *  > 2.2 Stream 中间操作链，一系列对数据源的处理(filter\\map\\...)
+ *  > 2.2 Stream 中间操作链，一系列对数据源的处理(filter\\sorted\\map\\reduce...)
  *  > 2.3 Stream 执行终止操作->执行中间链。产生的结果(Stream实例)不能再被使用
  * 三、实例化：4种方式
  *  > 3.1 集合    Collection两个默认方法

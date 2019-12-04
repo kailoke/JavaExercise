@@ -8,7 +8,9 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 /** 构造器引用
- * 原理同MethodReference，省略 参数+返回值（一致）
+ * 一、原理同MethodReference，参数+返回值（一致）
+ * 二、格式:    类名 :: new
+ * 三、因为BiFunction只有二元参数，实际使用应该会受到此限制(若使用内置函数式接口)
  */
 
 public class ConstructorReference {

@@ -9,9 +9,9 @@ import java.lang.reflect.Proxy;
 
 /** 动态代理
  * 一、根据加载到内存中的被代理类，创建代理类对象
- *
+ *  Proxy.newProxyInstance(ClassLoader loader,Class<?>[] interfaces,InvokeHandler h)
  * 二、代理类对象动态调用被代理类中的同名方法
- *
+ *  implements InvokeHandler    @Override invoke()
  */
 
 public class DynamicProxyTest {

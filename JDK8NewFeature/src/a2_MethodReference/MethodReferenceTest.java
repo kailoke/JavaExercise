@@ -7,7 +7,7 @@ import java.util.function.BinaryOperator;
 import java.util.function.Consumer;
 
 /** MethodReference
- * 1.方法引用，本质上是Lambda表达式
+ * 1.方法引用，本质上是替换Lambda表达式
  * 2.当lambda重写抽象方法的方法体已经有实现方法，则可以使用方法引用
  * 3.MethodReference方法 必须 与函数式接口抽象方法的 “形参列表+返回值类型” 相同
  */

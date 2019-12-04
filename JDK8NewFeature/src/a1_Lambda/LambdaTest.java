@@ -2,18 +2,20 @@ package a1_Lambda;
 
 import org.junit.Test;
 
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
-/** Lambda表达式
+/** Lambda表达式   匿名实现类的简洁写法- -?
  * 一、格式：(抽象方法的形参列表) -> {重写抽象方法的方法体;};
  *                              ↑ lambda操作符 箭头操作符 (C/C++取值运算符)
  * 二、Java中lambda表达式的本质是作为函数式接口的实例，并重写虚方法
  * 三、语法总结
  *  > 形参列表:lambda形参列表参数类型可以省略(类型推断)；lambda形参列表只有一个参数，则可省略()
  *  > 方法体：lambda体应使用{}包裹多条语句；只有一条执行语句则省略 return + {}
+ * 四、Java内置 java.util.function 包内函数式接口
+ *  > Consumer  BiConsumer
+ *  > Supplier
+ *  > Function  BiFunction UnaryFunction BinaryFunction
+ *  > Predicate BiPredicate
  */
 public class LambdaTest {
     @Test
