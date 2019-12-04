@@ -1,4 +1,4 @@
-package com.F.threadtest;
+package com.F.a1_threadtest;
 
 /** 线程的创建：实现Runnable接口
  * 1.实现Runnable接口
@@ -13,7 +13,7 @@ package com.F.threadtest;
  *  Thread 也 implements Runnable，即任何线程类都需要重写 run()方法
  *
  */
-public class CreatThread2 {
+public class RunnableTest {
     public static void main(String[] args) {
         new Thread(new CreateThread2()).start();
         new Thread(new CreateThread2()).start();    // 根据对象可直接启动线程

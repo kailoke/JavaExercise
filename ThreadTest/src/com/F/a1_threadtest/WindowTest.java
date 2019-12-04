@@ -1,4 +1,4 @@
-package com.F.threadtest;
+package com.F.a1_threadtest;
 
 /*
 三个窗口卖100张票，将票定义为类

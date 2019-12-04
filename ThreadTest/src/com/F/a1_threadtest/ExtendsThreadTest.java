@@ -1,4 +1,4 @@
-package com.F.threadtest;
+package com.F.a1_threadtest;
 
 /** 线程的创建 :继承Thread类
  * 1.创建一个继承于Thread类的子类
@@ -7,7 +7,7 @@ package com.F.threadtest;
  * 4.通过对象调用start()方法
  *  > 每个线程有一个 ThreadState 通过此值判断状态
  */
-public class CreatThread1 {
+public class ExtendsThreadTest {
     public static void main(String[] args) {
         primeThread pt = new primeThread();
         pt.start(); // 线程开始执行；JVM调用 this 线程的 Run()方法
