@@ -39,7 +39,7 @@ public class ClassLoaderTest {
         FileInputStream fis = new FileInputStream("src/test.properties");
 
         // 方式二 ClassLoader对象.getResourceAsStream(String path)
-        // 路径相对于 module/src
+        // 类加载器路径相对于 module/src
         ClassLoader classLoader = ClassLoaderTest.class.getClassLoader();
         InputStream is = classLoader.getResourceAsStream("test.properties");
 

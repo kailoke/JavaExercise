@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/EnumAnnotation/EnumAnnotation.iml" filepath="$PROJECT_DIR$/EnumAnnotation/EnumAnnotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Generic/Generic.iml" filepath="$PROJECT_DIR$/Generic/Generic.iml" />
       <module fileurl="file://$PROJECT_DIR$/IO/IO.iml" filepath="$PROJECT_DIR$/IO/IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JDBC/JDBC.iml" filepath="$PROJECT_DIR$/JDBC/JDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/JDK8NewFeature/JDK8NewFeature.iml" filepath="$PROJECT_DIR$/JDK8NewFeature/JDK8NewFeature.iml" />
       <module fileurl="file://$PROJECT_DIR$/JDK9_10_11/JDK9_10_11.iml" filepath="$PROJECT_DIR$/JDK9_10_11/JDK9_10_11.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaExcercise.iml" filepath="$PROJECT_DIR$/JavaExcercise.iml" />
