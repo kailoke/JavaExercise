@@ -9,7 +9,9 @@ import java.sql.*;
 import java.util.Properties;
 
 /** 使用PreparedStatement实现对数据表的 增改删
- *
+ * > Precompiled: 防止SQL语句被非法切割--> 解决SQl注入问题
+ * > Blob数据
+ * > 因为预编译，执行效率更快。 编译后运行时只填入占位参数，不需要重复解释
  */
 public class CommonInsertUpdateDeleteTest {
     @Test
