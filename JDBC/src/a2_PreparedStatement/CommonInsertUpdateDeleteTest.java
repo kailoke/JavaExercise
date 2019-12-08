@@ -103,21 +103,25 @@ public class CommonInsertUpdateDeleteTest {
             for (int i = 0; i < args.length; i++) {
                 ps.setObject(i + 1,args[i]);
             }
+            // > 执行语句后有结果集，则返回 true
+            // > 执行语句后无结果集，则返回 false
+//            ps.execute();
 
-            ps.execute();
+            // > 返回affected 行数
+            int i = ps.executeUpdate();
+            System.out.println("Common Modify successed and affected lines of " + i);
         } catch (IOException | SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             JDBCUtil.close(connection,ps);
         }
-        System.out.println("Common Modify Finished....");
     }
     @Test
     public void testCommon(){
 //        String sql1 = "delete from customers where id = ? or id = ? or id = ?";
 //        commonModify(sql1,21,22,23);
-
+//
         String sql2 = "Insert into user values (null,?,?,?,?)";
-        commonModify(sql2,"梁朝伟","xyz","Hongkong","18758585858");
+        commonModify(sql2, "梁朝伟", "xyz", "Hongkong", "18758585858");
     }
 }

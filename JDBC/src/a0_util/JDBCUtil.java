@@ -47,20 +47,7 @@ public class JDBCUtil {
     }
 
     public static void close(Connection c, Statement p,ResultSet r) {
-        if (c != null){
-            try {
-                c.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        if (p != null){
-            try {
-                p.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        close(c,p);
         if ( r != null){
             try {
                 r.close();
@@ -68,6 +55,5 @@ public class JDBCUtil {
                 e.printStackTrace();
             }
         }
-        System.out.println("数据库断开连接...");
     }
 }
