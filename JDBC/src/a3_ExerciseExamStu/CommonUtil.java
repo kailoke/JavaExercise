@@ -64,7 +64,7 @@ public class CommonUtil {
             int i = ps.executeUpdate();
             System.out.println("Common Modify successed and affected lines of " + i);
             return i;
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch ( SQLException e) {
             e.printStackTrace();
         } finally {
             JDBCUtil.close(connection,ps);

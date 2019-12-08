@@ -40,7 +40,7 @@ public class QueryCustomers {
                 Customers customer = new Customers(id, name, email, birth);
                 System.out.println("customers:" + customer);
             }
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             // 3.额外关闭查询资源:resultSet

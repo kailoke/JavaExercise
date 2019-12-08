@@ -81,7 +81,7 @@ public class CommonInsertUpdateDeleteTest {
             ps.setInt(4,20);
             // 3.执行实例
             ps.execute();
-        } catch (IOException | ClassNotFoundException | SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             // 4.释放资源
@@ -110,7 +110,7 @@ public class CommonInsertUpdateDeleteTest {
             // > 返回affected 行数
             int i = ps.executeUpdate();
             System.out.println("Common Modify successed and affected lines of " + i);
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             JDBCUtil.close(connection,ps);
