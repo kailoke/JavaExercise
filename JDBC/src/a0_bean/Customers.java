@@ -12,16 +12,20 @@ public class Customers {
     public int id;
     public String name;
     public String email;
-    public java.sql.Date birth;
+    public Date birth;
 
     public Customers() {
     }
 
-    public Customers(int id, String name, String email, Date date) {
-        this.id = id;
+    public Customers(String name, String email, Date birth) {
         this.name = name;
         this.email = email;
-        this.birth = date;
+        this.birth = birth;
+    }
+
+    public Customers(int id, String name, String email, Date date) {
+        this(name,email,date);
+        this.id = id;
     }
 
     public int getId() {
@@ -48,12 +52,12 @@ public class Customers {
         this.email = email;
     }
 
-    public Date getDate() {
+    public Date getBirth() {
         return birth;
     }
 
-    public void setDate(Date date) {
-        this.birth = date;
+    public void setBirth(Date birth) {
+        this.birth = birth;
     }
 
     @Override
@@ -62,7 +66,7 @@ public class Customers {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
-                ", brith=" + birth +
+                ", birth=" + birth +
                 '}';
     }
 }

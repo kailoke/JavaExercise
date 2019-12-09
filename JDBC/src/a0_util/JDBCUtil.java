@@ -21,11 +21,10 @@ public class JDBCUtil {
             String password = SQLinfo.getProperty("password");
             Class.forName(driverClass);
             connection = DriverManager.getConnection(url, user, password);
+            System.out.println("数据库已连接");
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
-
-        System.out.println("数据库已连接");
         return connection;
     }
 
@@ -33,11 +32,11 @@ public class JDBCUtil {
         if (c != null){
             try {
                 c.close();
+                System.out.println("数据库断开连接...");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-        System.out.println("数据库断开连接...");
     }
 
     // 资源关闭
