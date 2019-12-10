@@ -29,7 +29,7 @@ public class DBCPTest {
     @Test
     public void testXML() throws Exception {
         Properties prop = new Properties();
-        prop.load(ClassLoader.getSystemClassLoader().getResourceAsStream("DPCP.properties"));
+        prop.load(ClassLoader.getSystemClassLoader().getResourceAsStream("dpcp.properties"));
         DataSource source = BasicDataSourceFactory.createDataSource(prop);
 
         Connection connection = source.getConnection();

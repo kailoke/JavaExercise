@@ -1,6 +1,7 @@
 package a11_DAOWithGeneric;
 
 import a0_util.JDBCUtil;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -106,8 +107,8 @@ public abstract class BaseDAO<T> {
         }
         return null;
     }
-    // 标量
-    public <E> E getValue(Connection c,String sql,Object... args) {
+    // scalar query
+    public <E> E getValue(@NotNull Connection c, String sql, Object... args) {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
