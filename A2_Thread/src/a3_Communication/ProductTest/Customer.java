@@ -1,23 +1,21 @@
-package com.F.ProductTest;
+package a3_Communication.ProductTest;
 
-public class Producer extends Thread{
+public class Customer extends Thread{
     private Clerk clerk;
 
-    public Producer(Clerk clerk){
+    public Customer(Clerk clerk){
         this.clerk = clerk;
     }
 
-    @Override
     public void run() {
         while (true) {
-            clerk.receive();
+            clerk.consume();
 
             try {
-                Thread.sleep(260);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-
     }
 }

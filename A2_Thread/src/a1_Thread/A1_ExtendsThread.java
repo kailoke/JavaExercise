@@ -1,24 +1,27 @@
-package com.F.a1_threadtest;
+package a1_Thread;
 
-/** 线程的创建 :继承Thread类
- * 1.创建一个继承于Thread类的子类
- * 2.重写Thread类的run方法  -->将此线程执行的操作声明在run()中
- * 3.创建一个Thread子类对象
- * 4.通过对象调用start()方法
- *  > 每个线程有一个 ThreadState 通过此值判断状态
+/** 创建线程方式一 : 继承Thread类
+ * 1. 创建继承Thread类的线程体子类，重写Thread类 run()
+ *      > 将此线程执行的操作声明在run()中
+ * 2. new 线程体类()，调用线程体子类对象 start()
+ * 3. 核心是 线程体对象.start() 进行线程创建和run()调用，run()只是一个普通方法
+ * 4. 一个线程对象只能start()一次，否则抛出IllegalThreadStateException
+ *      > 线程状态：Thread实例成员：int ThreadStatus
  */
-public class ExtendsThreadTest {
+
+
+public class A1_ExtendsThread {
     public static void main(String[] args) {
-        primeThread pt = new primeThread();
-        pt.start(); // 线程开始执行；JVM调用 this 线程的 Run()方法
-//        pt.run();   // 不会开启新线程，当做普通类处理
+        primeThread1 pt = new primeThread1();
+        pt.start();     // 线程创建，JVM调用 this 线程的 Run()方法
+//        pt.run();     // 不会开启新线程，run()是一个普通方法
         for (int i = 0; i < 100; i++) {
             if (i % 2 !=0){
                 System.out.println("main\t" + i);
             }
         }
 
-        primeThread pt2 = new primeThread();
+        primeThread1 pt2 = new primeThread1();
         pt2.start();
     }
 
@@ -48,7 +51,7 @@ public class ExtendsThreadTest {
     }
 }
 
-class primeThread extends Thread{
+class primeThread1 extends Thread{
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {

@@ -1,4 +1,4 @@
-package com.F.ProductTest;
+package a3_Communication.ProductTest;
 
 public class Clerk {
     private int product = 0;
