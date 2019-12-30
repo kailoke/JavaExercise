@@ -385,8 +385,5 @@ public class VoxConvert {
 //            System.out.println("dest: " + wavFile);
             Vox2Wav(voxFile,wavFile, VF_ADPCM, convertRate, BIT_RATE_VB_8);
         }
-
-      
- 
     }
 }
