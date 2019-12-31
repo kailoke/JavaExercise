@@ -1,4 +1,4 @@
-package com.F.compareTest;
+package A4_JavaCompare;
 
 import java.util.Arrays;
 

@@ -12,6 +12,7 @@ package A8_Exception;
  *        > 程序员可以不用处理运行时异常，java虚拟机将自动捕获
  *  三、解决方式
  *      > 1. try-catch-finally抓抛模型：捕获到方法内调用方法返回的异常后，调用者进行处理
+ *          finally必须放置：数据库连接，输入输出流，网络编程socket等资源，JVM是不能自动回收的
  *      > 2. throws + 异常类型 的方法声明：调用者不处理，将其内部可能产生或捕获的异常抛给更上层的其他调用者进行处理
  *  四、异常“对象”
  *      > 抛出(throw)异常
@@ -30,5 +31,17 @@ public class A1_Exception {
     public static void main(String[] args) {
         Exception exception = new Exception("123");
         exception.getStackTrace();
+
+        int[] arr = new int[3];
+        try{    // 相当于方法，内部创建的变量具有作用域
+            arr[4] = 1;
+            return; // 发生异常时不会执行此代码
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            arr[4] = 1;
+//            e.printStackTrace();
+        }finally{   // finally一定会在try-catch结构结束前执行 catch中出现异常，finally也一定会被执行
+            System.out.println("123");
+        }
     }
 }

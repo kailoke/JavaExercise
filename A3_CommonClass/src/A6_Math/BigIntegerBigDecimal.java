@@ -1,4 +1,4 @@
-package com.F.otherClass;
+package A6_Math;
 
 /**Integer  最大值为 2^31 -1
  * Long     最大值为 2^63 -1

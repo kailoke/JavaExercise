@@ -1,13 +1,13 @@
-package com.F.stringB;
+package A1_StringRelevant;
 
 import org.junit.Test;
 
 /**
- *  字符串强化练习
+ *  String强化练习
  */
-public class StringExercise {
+public class A1_StringExercise {
 
-    // 1.模拟trim()，去除字符串头尾空格
+    // 1.模拟trim()，去除字符串头尾空格 : 取非头尾空格的子串 String.substring(prefix,offset)
     @Test
     public void simulateTrim(){
         String str = "   H ello worl d   ,   ";
@@ -28,7 +28,7 @@ public class StringExercise {
         System.out.println("****Test****");
     }
 
-    // 2.对字符串指定区间位置进行字符反转
+    // 2.对字符串指定区间位置进行字符反转 : 反转字符数组 String.toCharArray()
     @Test
     public void simulateReverse(){
         String str = "abcdefg";
@@ -41,11 +41,10 @@ public class StringExercise {
             charArr[start++] = charArr[end];
             charArr[end--] = temp;
         }
-
         System.out.println(new String(charArr));
     }
 
-    // 3.获得substring在string中出现的次数
+    // 3.获得substring在string中出现的次数 : indexOf()，内部暴力匹配
     @Test
     public void findTimes(){
         String str = "abkkcadkabkebfkabkskab";
@@ -62,12 +61,10 @@ public class StringExercise {
             offset = index + s.length();
             count++;
         }
-
         System.out.println("出现次数：" + count);
-
     }
 
-    // 4.获得两个字符串中最大相同子串
+    // 4.获得两个字符串中最大相同子串 : String.contains(String str)
     @Test
     public void getMostSimulation(){
         String str1 = "abcwerthelloyuiodef";
@@ -97,16 +94,8 @@ public class StringExercise {
 //            sub_max = sub_end-count;
             sub_max = sub.length() - 1;
             sub_start = 0;
-
         }
         System.out.println(sub);
-    }
-
-    // 数组的 length属于即总长度
-    @Test
-    public void test(){
-        String[] str = new String[10];
-        System.out.println(str.length);
     }
 }
 

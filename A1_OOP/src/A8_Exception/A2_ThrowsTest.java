@@ -1,14 +1,12 @@
-package com.F.exception;
-
-import org.hamcrest.Condition;
+package A8_Exception;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-public class ThrowsTest {
+public class A2_ThrowsTest {
     public static void main(String[] args) {
-        ThrowsTest t = new ThrowsTest();
+        A2_ThrowsTest t = new A2_ThrowsTest();
         try {
             t.method2();
         }catch (Exception e){

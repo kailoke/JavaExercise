@@ -1,4 +1,4 @@
-package com.F.otherClass;
+package A5_System;
 // currentMillis()
 // gc()
 // exit(int status)
