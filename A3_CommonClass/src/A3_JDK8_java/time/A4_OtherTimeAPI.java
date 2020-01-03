@@ -1,7 +1,6 @@
 package A3_JDK8_java.time;
 
 import org.junit.Test;
-
 import java.time.*;
 import java.time.temporal.Temporal;
 import java.time.temporal.TemporalAdjuster;
@@ -18,7 +17,7 @@ import java.util.Set;
  * 六、TemporalAdjuster : 时间校正器。 例如：将日期调整到“下一个工作”
  * 七、TemporalAdjusters: 工具类，(firstDayOfXxx()/lastDayOfXxx()/nextXxx())大量常用的TemporalAdjuster实现
  */
-public class A4_OtherAPI {
+public class A4_OtherTimeAPI {
     @Test
     // ZoneId ZoneDateTime
     public void testZone() {
@@ -42,7 +41,7 @@ public class A4_OtherAPI {
 
     @Test
     // Duration:用于计算两个“时间”间隔，以秒和纳秒为基准
-    public void testDutation() {
+    public void testDuration() {
         LocalTime localTime = LocalTime.now();
         LocalTime localTime1 = LocalTime.of(15, 23, 32);
         //between():静态方法，返回Duration对象，表示两个时间的间隔
@@ -60,7 +59,7 @@ public class A4_OtherAPI {
     //Period:用于计算两个“日期”间隔，以年、月、日衡量
     public void testPeriod() {
         LocalDate localDate = LocalDate.now();
-        LocalDate localDate1 = LocalDate.of(2028, 3, 18);
+        LocalDate localDate1 = LocalDate.of(2020, 1, 2);
         Period period = Period.between(localDate, localDate1);
         System.out.println(period);
         System.out.println(period.getYears());
@@ -76,7 +75,7 @@ public class A4_OtherAPI {
         // 获取当前日期的下一个周日是哪天？
         TemporalAdjuster temporalAdjuster = TemporalAdjusters.next(DayOfWeek.SUNDAY);
         LocalDateTime localDateTime = LocalDateTime.now().with(temporalAdjuster);
-        System.out.println(localDateTime);
+        System.out.println("下一个Sunday : " + localDateTime);
 
         // 获取下一个工作日是哪天？
         LocalDate localDate = LocalDate.now().with(new TemporalAdjuster() {
