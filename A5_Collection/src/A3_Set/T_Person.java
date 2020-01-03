@@ -1,10 +1,10 @@
-package com.F.set;
+package A3_Set;
 
 import java.util.Objects;
 
-public class Person implements Comparable{
+public class T_Person implements Comparable{
     private String name;
-    private int age = 60;
+    private int age;
 
     @Override
     public String toString() {
@@ -22,22 +22,21 @@ public class Person implements Comparable{
         return age;
     }
 
-    public Person(String name, int age) {
+    public T_Person() {
+    }
+    public T_Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Person() {
-    }
-
     @Override
     public int compareTo(Object o) {
-        System.out.println("compareTo");
-        if (o instanceof Person){
-            if (Integer.compare(this.age,((Person)o).age) == 0){
-                return this.name.compareTo(((Person)o).name);
+        System.out.println("compareTo invoke");
+        if (o instanceof T_Person){
+            if (this.age == ((T_Person) o).age){
+                return this.name.compareTo(((T_Person)o).name);
             }
-            return Integer.compare(this.age,((Person)o).age);
+            return Integer.compare(this.age,((T_Person)o).age);
         }
         throw new RuntimeException("数据类型错误");
     }
@@ -46,9 +45,9 @@ public class Person implements Comparable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return age == person.age &&
-                name.equals(person.name);
+        T_Person TPerson = (T_Person) o;
+        return age == TPerson.age &&
+                name.equals(TPerson.name);
     }
 
     @Override
