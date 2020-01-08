@@ -1,14 +1,21 @@
-package a3_File_IO;
+package a3_File_IOStream;
 
 import org.junit.Test;
-
 import java.io.*;
 
-// 字节流(非文本文件 + 文本文件(可能乱码))
+/** 字节流
+ *  > 非文本文件
+ *      > mp3 jpg doc excel ...
+ *  > 文本文件(因为编码问题，可能乱码)
+ *      > txt .java .c .cpp
+ */
+
+
 public class File_IOStream {
     @Test
+    // 字节流输出英文ok，输出中文(Unicode双字节)则出现乱码
     public void testFileInputStream(){
-        File file = new File("src/a3_File_IO/hello_chinese.txt");
+        File file = new File("src/a3_File_IOStream/hello_chinese.txt");
         FileInputStream fis = null;
         try {
             fis = new FileInputStream(file);
@@ -17,7 +24,6 @@ public class File_IOStream {
             while ((len = fis.read(buffer)) != -1){
                 System.out.println(new String(buffer,0,len));
             }
-            System.out.println("输出完毕");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -30,26 +36,25 @@ public class File_IOStream {
         }
     }
 
-    // 复制图片
+    // 复制字节流文件
     @Test
-    public void testCopy() {
-        File scrFile = new File("src/a3_File_IO/屏幕截图.jpg");
-        File destFile = new File("src/a3_File_IO/屏幕截图_dest.jpg");
+    public void copy() {
+        File scrFile = new File("src/a3_File_IOStream/屏幕截图.jpg");
+        File destFile = new File("src/a3_File_IOStream/屏幕截图_dest.jpg");
 
         FileInputStream fis = null;
         FileOutputStream fos = null;
         try {
             fis = new FileInputStream(scrFile);
             fos = new FileOutputStream(destFile);
-            // 1K
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[1024]; // 1K
             int len;
             int count = 0;
             while ((len = fis.read(buffer)) != -1){
                 count++;
                 fos.write(buffer,0,len);
             }
-            System.out.println("完成图片复制，读取次数：" + count);
+            System.out.println("完成图片复制，读取次数：" + count); // 325次，~= 325K
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

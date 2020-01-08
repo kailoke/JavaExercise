@@ -2,26 +2,20 @@ package a7_ObjectIOStream;
 
 import java.io.*;
 
-/** 类可序列化要求
- * > 1.实现接口  Serializable[标识接口]/ Externalizable
- * > 2.声明 全局常量(long) 序列版本号 [标识]
- *      > public static final long serialVersionUID
- *      > 未显示指定，则jvm会运行时根据属性指定一个值
- * > 3.类内部属性必须是全可序列化的
- *      > 所有基本数据类型可以序列化
- *      > 使其他引用类型均可序列化即可
- * > 4.不会序列化static transient修饰的属性
+/**
+ * 序列化测试类
  */
-public class Person implements Serializable {
+
+public class T_Person implements Serializable {
     public static final long serialVersionUID = 3315L;
 
     private String name;
     private int age;
     private Account acct;
 
-    public Person() {
+    public T_Person() {
     }
-    public Person(String name, int age) {
+    public T_Person(String name, int age) {
         this.name = name;
         this.age = age;
     }

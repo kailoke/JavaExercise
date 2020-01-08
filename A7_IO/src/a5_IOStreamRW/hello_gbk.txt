@@ -1,2 +1,4 @@
 hello world1
 hello world2
+你好中国1
+你好中国2
