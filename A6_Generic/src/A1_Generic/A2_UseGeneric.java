@@ -1,7 +1,5 @@
 package A1_Generic;
 
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
-
 /** 自定义泛型结构
  * 一、泛型声明：例如 interface List<T> 和 class GenTest<K,V>
  *     其中T\K\V不代表值，而是表示类型。
@@ -13,8 +11,8 @@ import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
  *  > 接口或抽象类不可创建类型类的对象，它们本身也不能实例化对象...
  *  > 带有泛型参数的类或接口实例化时若未指定泛型，则默认类型类似为Object，但不完全等同
  *  > 静态方法中不能使用 类泛型参数，类泛型结构只能在实例结构中使用
- *    类泛型参数是实例化时传入；静态方法只有一份，不能多次实例化
- *  > Exception不能使用泛型
+ *    类泛型参数是实例化时传入，此时参数类可能还未加载
+ *  > Exception不能使用泛型，catch{} 也不能使用泛型
  *  > 不能 new E[]。但可以 E[] e = (E[])new Object[capacity]
  *
  * 三、泛型类的构造器，不需要再声明泛型参数。 这个泛型类的构造器是错误的： public Person<E>(){}
@@ -32,22 +30,20 @@ public class A2_UseGeneric<T> {
     public A2_UseGeneric(){
     }
 
-
     public static void main(String[] args) {
-
     }
 }
 
 class Father<T1, T2> { }
 
 // 子类不保留父类的泛型
-// 1)没有类型，擦除
+// 1)子类擦除父类类型
 class Son1 extends Father { }   // 等价于class Son extends Father<Object,Object>{ }
-// 2)具体类型
+// 2)子类指明父类类型
 class Son2 extends Father<Integer, String> { }
 
 // 子类保留父类的泛型
-// 1)全部保留
+// 1)子类全部保留父类类型
 class Son3<T1, T2> extends Father<T1, T2> { }
-// 2)部分保留
+// 2)子类部分部保留父类类型
 class Son4<T2> extends Father<Integer, T2> { }
