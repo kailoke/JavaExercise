@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-/** HashSet：本质上是HashMap
+/** HashSet：本质上是HashMap的Key
  * 一、HashSet对象相等的规则
  *  > 两个对象的 HashCode()返回值相等 && equals() == true
  *  > 存放于Set容器中的类一定要重写equals()和hashCode(Object obj)方法，以保证相等性
