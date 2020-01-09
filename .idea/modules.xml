@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/A0_JavaFundamentals/A0_JavaFundamentals.iml" filepath="$PROJECT_DIR$/A0_JavaFundamentals/A0_JavaFundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A10_JDK8Features/A10_JDK8Features.iml" filepath="$PROJECT_DIR$/A10_JDK8Features/A10_JDK8Features.iml" />
       <module fileurl="file://$PROJECT_DIR$/A1_OOP/A1_OOP.iml" filepath="$PROJECT_DIR$/A1_OOP/A1_OOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/A2_Thread/A2_Thread.iml" filepath="$PROJECT_DIR$/A2_Thread/A2_Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/A3_CommonClass/A3_CommonClass.iml" filepath="$PROJECT_DIR$/A3_CommonClass/A3_CommonClass.iml" />
@@ -10,10 +11,9 @@
       <module fileurl="file://$PROJECT_DIR$/A5_Collection/A5_Collection.iml" filepath="$PROJECT_DIR$/A5_Collection/A5_Collection.iml" />
       <module fileurl="file://$PROJECT_DIR$/A6_Generic/A6_Generic.iml" filepath="$PROJECT_DIR$/A6_Generic/A6_Generic.iml" />
       <module fileurl="file://$PROJECT_DIR$/A7_IO/A7_IO.iml" filepath="$PROJECT_DIR$/A7_IO/A7_IO.iml" />
-      <module fileurl="file://$PROJECT_DIR$/A8_Socket/A8_Socket.iml" filepath="$PROJECT_DIR$/A8_Socket/A8_Socket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A8_Net/A8_Net.iml" filepath="$PROJECT_DIR$/A8_Net/A8_Net.iml" />
       <module fileurl="file://$PROJECT_DIR$/A9_Reflection/A9_Reflection.iml" filepath="$PROJECT_DIR$/A9_Reflection/A9_Reflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/JDBC/JDBC.iml" filepath="$PROJECT_DIR$/JDBC/JDBC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JDK8NewFeature/JDK8NewFeature.iml" filepath="$PROJECT_DIR$/JDK8NewFeature/JDK8NewFeature.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaExcercise.iml" filepath="$PROJECT_DIR$/JavaExcercise.iml" />
     </modules>
   </component>

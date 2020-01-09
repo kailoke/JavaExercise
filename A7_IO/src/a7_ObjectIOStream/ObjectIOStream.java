@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.io.*;
 
 /** 对象流 : 用于存储和读取基本数据类型数据或对象的处理流。
- * 一、对象流
+ * 一、对象流 implements Serializable
  *  > 将java对象(或data数据流)序列化成与平台无关的二进制数据，从而持久化或网络传输
  *    另一节点获得此二进制流，就可以反序列化成内存对象
  *  > 序列化：ObjectOutputStream类保存基本类型数据或对象的机制
