@@ -1,4 +1,4 @@
-package a10_StreamAPI;
+package a2_StreamAPI;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Person {
         this.age = age;
     }
 
-    public static List<Person> getPersons(){
+    static List<Person> getPersons(){
         ArrayList<Person> persons = new ArrayList<>();
         persons.add(new Person("刘备",15));
         persons.add(new Person("关羽",16));
