@@ -1,11 +1,12 @@
-package a0_bean;
+package a0_Bean;
 
 import java.sql.Date;
 
+// DB:test
 public class Order {
-    public int orderId;
-    public String orderName;
-    public Date orderDate;
+    private int orderId;
+    private String orderName;
+    private Date orderDate;
 
     public Order() {
     }

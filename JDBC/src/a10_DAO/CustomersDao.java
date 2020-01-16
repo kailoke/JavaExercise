@@ -1,6 +1,6 @@
 package a10_DAO;
 
-import a0_bean.Customers;
+import a0_Bean.Customers;
 
 import java.sql.Connection;
 import java.sql.Date;

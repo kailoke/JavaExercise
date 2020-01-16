@@ -1,6 +1,6 @@
 package a11_DAOWithGeneric;
 
-import a0_bean.Customers;
+import a0_Bean.Customers;
 import org.jetbrains.annotations.NotNull;
 
 import java.sql.Connection;

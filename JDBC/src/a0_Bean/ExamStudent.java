@@ -1,4 +1,4 @@
-package a3_ExerciseExamStu;
+package a0_Bean;
 
 public class ExamStudent {
     public int flowId;

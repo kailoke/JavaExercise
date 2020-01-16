@@ -1,15 +1,18 @@
-package a0_util;
+package a0_JDBCUtil;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.Objects;
 import java.util.Properties;
 
-/*
-    操作数据库工具类
+/**
+ * 数据库通用操作
+ * > getConnection() : 返回java.sql.Connection 实例
+ * > close() : 关闭SQL资源(Connection || Statement || ResultSet)
  */
+
 public class JDBCUtil {
-    // 获取连接
+    // return instance of java.sql.Connection
     public static Connection getConnection() {
         Connection connection = null;
         try {
@@ -21,25 +24,26 @@ public class JDBCUtil {
             String password = SQLinfo.getProperty("password");
             Class.forName(driverClass);
             connection = DriverManager.getConnection(url, user, password);
-            System.out.println("数据库已连接");
+            System.out.println("JDBCUtil：db connected");
         } catch (IOException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
         return connection;
     }
 
+    // close() overload
     private static void close(Connection c){
         if (c != null){
             try {
                 c.close();
-                System.out.println("数据库断开连接...");
+                System.out.println("JDBCUtil：db disconnected");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    // 资源关闭
+    // close() overload
     public static void close(Connection c, Statement p){
         close(c);
         if (p != null){
@@ -51,6 +55,7 @@ public class JDBCUtil {
         }
     }
 
+    // close() overload
     public static void close(Connection c, Statement p,ResultSet r) {
         close(c,p);
         if ( r != null){

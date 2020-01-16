@@ -1,17 +1,34 @@
 package a2_PreparedStatement;
 
-import a0_bean.Customers;
-import a0_bean.Order;
-import a0_util.JDBCUtil;
 import org.junit.Test;
 
+import a0_Bean.Customers;
+import a0_Bean.Order;
+import a0_JDBCUtil.JDBCUtil;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CommonQuery {
-    // 泛型方法 : 泛型作为函数参数列表参数
-    private <T> ArrayList<T> commonQuery(Class<T> clazz, String sql, Object ... args) {
+/**
+ * 运行时类作为泛型参数，调用者传入Class信息
+ */
+
+public class A3_GenericQuery {
+    @Test
+    public void testGenericQuery(){
+        String sql = "select id,name,email,birth from customers where id <= ?";
+        ArrayList<Customers> customers = genericQuery(Customers.class, sql, 10);
+        customers.forEach(System.out::println);
+
+        System.out.println("*****************************");
+
+        sql = "select order_id orderId,order_name orderName,order_date orderDate from `order`";
+        ArrayList<Order> orders = genericQuery(Order.class, sql);
+        orders.forEach(System.out::println);
+    }
+
+    // 泛型方法 : 运行时类作为泛型参数，返回该泛型的数组
+    private <T> ArrayList<T> genericQuery(Class<T> clazz, String sql, Object ... args) {
         Connection connection = null;
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -26,16 +43,17 @@ public class CommonQuery {
             ArrayList<T> list = new ArrayList<>();
 
             while (resultSet.next()){
-                T t = clazz.getDeclaredConstructor().newInstance();
+                // 泛型类的实例
+                T temp = clazz.getDeclaredConstructor().newInstance();
 
                 int columnCount = metaData.getColumnCount();
                 for (int i = 0; i < columnCount; i++) {
                     String columnLabel = metaData.getColumnLabel(i+1);
                     Field field = clazz.getDeclaredField(columnLabel);
                     field.setAccessible(true);
-                    field.set(t,resultSet.getObject(i+1));
+                    field.set(temp,resultSet.getObject(i+1));
                 }
-                list.add(t);
+                list.add(temp);
             }
             return list;
         } catch (Exception e) {
@@ -44,18 +62,5 @@ public class CommonQuery {
             JDBCUtil.close(connection,ps,resultSet);
         }
         return null;
-    }
-
-    @Test
-    public void testCommonQuery(){
-        String sql = "select id,name,email,birth from customers where id <= ?";
-        ArrayList<Customers> customers = commonQuery(Customers.class, sql, 10);
-        customers.forEach(System.out::println);
-
-        System.out.println("*****************************");
-
-        sql = "select order_id orderId,order_name orderName,order_date orderDate from `order`";
-        ArrayList<Order> orders = commonQuery(Order.class, sql);
-        orders.forEach(System.out::println);
     }
 }

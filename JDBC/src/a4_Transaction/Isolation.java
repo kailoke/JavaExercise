@@ -1,14 +1,24 @@
-package a5_Transaction;
+package a4_Transaction;
 
-import a0_util.JDBCUtil;
 import org.junit.Test;
 
+import a0_Bean.User;
+import a0_JDBCUtil.JDBCUtil;
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
 
 public class Isolation {
-    //
+    @Test
+    public void testTxQuery() throws SQLException {
+        Connection connection = JDBCUtil.getConnection();
+        connection.setAutoCommit(false);
+        String sql = "select user,password,balance from user_table where user = ?";
+        ArrayList<User> cc = txQuery(connection, User.class, sql, "CC");
+        // 不提交
+        cc.forEach(System.out::println);
+    }
+    // 一、将连接作为参数传递：泛型方法(Connection,Class<T>,SQL,Objects[])
     public static<T> ArrayList<T> txQuery(Connection c,Class<T> clazz, String sql, Object ... args) {
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -42,27 +52,20 @@ public class Isolation {
         return null;
     }
 
-    @Test
-    public void testTxQuery() throws SQLException {
-        Connection connection = JDBCUtil.getConnection();
-        connection.setAutoCommit(false);
-        String sql = "select user,password,balance from user_table where user = ?";
-        ArrayList<User> cc = txQuery(connection, User.class, sql, "CC");
-        // 不提交
-        System.out.println(cc);
-    }
+
     @Test
     public void testTxModify() throws SQLException {
         Connection connection = JDBCUtil.getConnection();
         connection.setAutoCommit(false);
         String sql = "update user_table set balance = ? where user = ?";
-        TransactionTest.txModify(connection,sql,5000,"CC");
+        TransactionTest.modify(connection,sql,5000,"CC");
+
+        // 当前线程休眠，不提交
         try {
             Thread.sleep(15000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // 不提交
         System.out.println("修改结束");
     }
 }

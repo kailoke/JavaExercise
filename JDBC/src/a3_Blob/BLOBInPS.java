@@ -1,16 +1,27 @@
-package a4_Blob;
+package a3_Blob;
 
-import a0_bean.Customers;
-import a0_util.JDBCUtil;
 import org.junit.Test;
 
+import a0_Bean.Customers;
+import a0_JDBCUtil.JDBCUtil;
 import java.io.*;
 import java.sql.*;
 
+/** BLOB 二进制大对象 Binary Large Object
+ * 一、二进制上传至数据库
+ *  > ps.setBlob(index, InputStream is)
+ *  > ps.execute
+ *
+ * 二、二进制流下载至本地
+ *  > Blob对象：RS.getBlob()
+ *  > blob输入流：Blob.getBinaryStream : InputStream
+ *  > 从blob输入流读取 二进制数据 写出至 输出流(OutputStream)
+ *
+ */
 
-public class BlobWithPS {
+public class BLOBInPS {
     @Test
-    // 修改blob字段
+    // 一、向数据库上传BLOB类型数据
     public void testInsert() throws Exception {
         Connection connection = JDBCUtil.getConnection();
         String sql ="insert into customers values (null,?,?,?,?)";
@@ -19,14 +30,16 @@ public class BlobWithPS {
         ps.setObject(1,"刘备");
         ps.setObject(2,"LB@nb.com");
         ps.setObject(3,"2012-3-15");
+        // Blob流从外部读取，PrepareStatement自动获取输入流
         FileInputStream fis = new FileInputStream("./src/a4_Blob/test.jpg");
         ps.setBlob(4, fis);
         ps.execute();
-
+        // SQL执行时，将blob输入流存储到数据库中
         JDBCUtil.close(connection,ps);
     }
 
     @Test
+    // 二、从数据库获取Blob类型数据，并保存到本地
     public void testQuery() {
         Connection connection = JDBCUtil.getConnection();
         PreparedStatement ps = null;
@@ -83,7 +96,6 @@ public class BlobWithPS {
                 e.printStackTrace();
             }
         }
-
         JDBCUtil.close(connection,ps,resultSet);
     }
 }

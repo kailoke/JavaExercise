@@ -1,13 +1,11 @@
 package a10_DAO;
 
-import a0_bean.Customers;
-import a0_util.JDBCUtil;
+import a0_Bean.Customers;
+import a0_JDBCUtil.JDBCUtil;
 import org.junit.Test;
 
 import java.sql.Connection;
 import java.sql.Date;
-
-import static org.junit.Assert.*;
 
 public class CustomersDAOImplTest {
     CustomersDAOImpl dao = new CustomersDAOImpl();

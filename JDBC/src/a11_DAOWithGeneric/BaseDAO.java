@@ -1,6 +1,6 @@
 package a11_DAOWithGeneric;
 
-import a0_util.JDBCUtil;
+import a0_JDBCUtil.JDBCUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Field;

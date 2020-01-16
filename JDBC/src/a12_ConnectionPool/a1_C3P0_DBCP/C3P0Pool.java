@@ -1,4 +1,4 @@
-package a12_C3P0_DBCP;
+package a12_ConnectionPool.a1_C3P0_DBCP;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 

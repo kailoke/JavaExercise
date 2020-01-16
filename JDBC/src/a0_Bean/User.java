@@ -1,4 +1,4 @@
-package a5_Transaction;
+package a0_Bean;
 
 public class User {
     private String user;

@@ -1,4 +1,4 @@
-package a12_C3P0_DBCP;
+package a12_ConnectionPool.a1_C3P0_DBCP;
 
 import org.apache.commons.dbcp.BasicDataSourceFactory;
 

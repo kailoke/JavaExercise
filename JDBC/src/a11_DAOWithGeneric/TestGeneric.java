@@ -1,7 +1,7 @@
 package a11_DAOWithGeneric;
 
-import a0_bean.Customers;
-import a0_util.JDBCUtil;
+import a0_Bean.Customers;
+import a0_JDBCUtil.JDBCUtil;
 import org.junit.Test;
 
 import java.sql.Connection;

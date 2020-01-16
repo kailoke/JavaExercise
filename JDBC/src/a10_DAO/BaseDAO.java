@@ -1,6 +1,6 @@
 package a10_DAO;
 
-import a0_util.JDBCUtil;
+import a0_JDBCUtil.JDBCUtil;
 
 import java.lang.reflect.Field;
 import java.sql.*;

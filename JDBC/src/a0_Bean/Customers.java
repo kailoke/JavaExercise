@@ -1,18 +1,25 @@
-package a0_bean;
+package a0_Bean;
 
 import java.sql.Date;
 
-/*
-    ORM (Object Relation Map): 对象关系映射 编程思想
-    > 一个数据表对应一个java类
-    > 表中的一条记录对应java类的一个对象
-    > 表中的一哥字段对应java类的一个字段
+/**
+ * 一、ORM (Object Relation Map): 对象关系映射 编程思想
+ *  > 一个数据表对应一个java类
+ *  > 表中的一条记录对应java类的一个对象
+ *  > 表中的一个字段对应java类的一个字段
+ *
+ * 二、JavaBean ：可被整个工程访问
+ *  > public 类
+ *  > public 无参构造器 --> 反射
+ *  > public set()/get() + 对应属性
  */
+
+// DB:test
 public class Customers {
-    public int id;
-    public String name;
-    public String email;
-    public Date birth;
+    private int id;
+    private String name;
+    private String email;
+    private Date birth;
 
     public Customers() {
     }
