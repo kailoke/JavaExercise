@@ -3,7 +3,7 @@ package A1_Generic;
 import org.junit.Test;
 import java.util.ArrayList;
 
-/** 泛型 : JDK5.0新增特性 <参数化类型 parameterized type>
+/** 泛型 : JDK5.0新增特性 <参数化类型 parameterized Type>
  * 一、思想：将元素的类型设计为参数，这个类型参数叫做泛型
  * 二、定义：允许在定义`类``接口`时通过一个标识表示类中某个`属性的类型`或者是某个方法的`返回值`及`参数类型`。
  *          这个类型参数将在实例化对象时确定。
@@ -14,6 +14,14 @@ import java.util.ArrayList;
  *  > 1.集合框架中的全部 接口和类 在JDK1.5都修改为 <泛型结构>
  *      从而可以在声明集合变量、创建集合对象时传入类型实参
  *  > 2.在实例化集合类时，可以指明集合中元素的类型，该集合将只能保存在 泛型 元素
+ *
+ * 三、JAVA泛型标记：
+ * > E  Element 集合类，存放元素(类)
+ * > T  Type    Java类(S、 U、 V - 2nd/3rd/4th types)
+ * > K  Key     键(类)
+ * > V  Value   值(类)
+ * > N  Number  仅数值类型
+ * > ?  Wildcard通配符，任意类型，通常搭配 extends || super 指定泛型的下限或者泛型的上限
  */
 
 public class A1_Generic {

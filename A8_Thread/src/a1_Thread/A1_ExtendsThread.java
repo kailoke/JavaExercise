@@ -1,6 +1,6 @@
 package a1_Thread;
 
-/** 创建线程方式一 : 继承Thread类
+/** 创建线程方式一 : 继承Thread类，重写run()
  * 1. 创建继承Thread类的线程体子类，重写Thread类 run()
  *      > 将此线程执行的操作声明在run()中
  * 2. new 线程体类()，调用线程体子类对象 start()

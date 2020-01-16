@@ -7,8 +7,8 @@ package a1_Thread;
  * 阻塞：
  *      BLOCK   : waiting for a monitor lock
  *      WAITING : (Object.wait() || Thread.join || LockSupport.park) with no timeOut
- *          Waiting for another lock to notify this <- Object.wait()
- *          Waiting for another thread to be terminated <- Thread.join()
+ *          Waiting for another lock to ``notify`` this <- Object.wait()
+ *          Waiting for another thread to be `terminated` <- Thread.join()
  *      TIMED_WAITING : (Thread.sleep() || Object.wait() || Thread.join || LockSupport.park) with timeOut
  * 死亡：TERMINATED    run()结束，执行stop()，未处理的Error/Exception
  */

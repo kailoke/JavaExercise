@@ -6,12 +6,14 @@ import java.util.concurrent.FutureTask;
 
 /** 线程的创建方式三：实现Callable<V>接口
  *  > 1. class Xxx implements Callable，@Override V call()
- *  > 2. new FutureTask(Callable call)创建线程体对象，调用线程体对象的 start()
+ *  > 2. new Thread(new FutureTask(Callable call)) 创建Thread线程体对象，调用线程体对象的 start()
+ *  > 3. 返回值 是 FutureTask<V>!.get()
  *
  * interface Callable :: V call throws Exception()
- *  > 有返回值，并且支持泛型返回值
+ *  > 有返回值，并且支持泛型返回值，由FutureTask实例保存
  *  > call()可以抛出异常
- *  > 需要借助FutureTask类：new FutureTask(Callable call)
+ *  > 需要借助 Class FutureTask<V> implements RunnableFuture Which implements Runnable,Future
+ *          > 所以 FutureTask是Runnable接口的实现类
  */
 
 

@@ -30,7 +30,7 @@ import java.util.Map;
 public class A2_HashMap {
     @Test
     public void test(){
-        Map map = new HashMap<Object, Object>();
+        HashMap map = new HashMap<>();
         map.put(1,1);
         map.get(1);
     }

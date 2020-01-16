@@ -1,6 +1,7 @@
 package a3_Communication;
 
-/** 线程通信方法仅能声明在Object类中：为了让任何对象都能作为"同步监视器"
+/** 锁通信
+ * 线程通信方法仅能声明在Object类中：为了让任何对象都能作为"同步监视器"
  *  > Object.wait()         monitor.wait() 令当前线程Block，释放锁；直到被唤醒
  *  > Object.notify()       随机唤醒一个优先级最高的处于Block状态的锁
  *  > Object.notifyAll()    唤醒全部处于 Block 状态的锁，结束他们的Block状态 --> Runnable

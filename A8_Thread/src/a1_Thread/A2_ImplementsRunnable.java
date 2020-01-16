@@ -1,9 +1,9 @@
 package a1_Thread;
 
-/** 创建线程方式二：实现Runnable接口
+/** 线程任务：实现Runnable接口
  * 1. class Xxx implements Runnable and Override run()
  * 2. new Thread(Runnable target)创建线程体对象，调用线程体对象的 start()
- * 3. 核心是 线程体对象.start() 进行线程创建和run()调用，run()只是一个普通方法
+ * 3. 核心是 线程体对象.start() 进行线程创建和run()调用，run()只是一个普通方法(当前线程的任务)
  *
  *  ~~创建两种线程的方式比较
  *  1. Thread 也 implements Runnable，即任何线程类都是重写 Runnable 接口里的 abstract run()

@@ -20,11 +20,12 @@ public class A3_GenericMethod {
         Object[] ao = new Object[100];
         Collection<Object> co = new ArrayList<>();
         fromArrayToCollection(ao, co);
+        System.out.println("co.getClass() : " + co.getClass());
 
         String[] sa = new String[20];
         Collection<String> cs = new ArrayList<>();
         fromArrayToCollection(sa, cs);
-        fromArrayToCollection(sa, co);  // T是Object类型，sa是String类型，可以赋值成功。
+        fromArrayToCollection(sa, co);  // sa是String类型，co是Object类型，String可被父类Object引用
 
         Collection<Double> cd = new ArrayList<>();
 //         fromArrayToCollection(sa, cd);   // T是Double类，但sa是String类型，编译错误。

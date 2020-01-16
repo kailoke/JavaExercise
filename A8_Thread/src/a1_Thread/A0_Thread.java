@@ -1,11 +1,11 @@
 package a1_Thread;
 
-/** Thread其他
- * 一、 Constructor:
+/** Thread ：并发
+ * 一、 Constructor，唯一的创建线程方法：线程体对象
  *  > 1. Thread()
  *  > 2. Thread(String name)
  *  > 3. Thread(Runnable target)
- *  > 4. Thread(Runnable target,String name)
+ *  > 4. Thread(Runnable target,String threadName)
  *
  * 二、 Method:
  * > 1. void start() 启动当前线程；调用当前线程的run()
@@ -18,6 +18,7 @@ package a1_Thread;
  * > 8. stop()      deprecated
  * > 9. sleep(long millis)  阻塞当前线程一定时间
  * > 10. isAlive()   判断当前线程是否存活
+ * > 11. interrupt() 终止当前线程
  *
  * 三、线程优先级
  * > 1. 同优先级线程组成 FIFO 队列(先进先出)
