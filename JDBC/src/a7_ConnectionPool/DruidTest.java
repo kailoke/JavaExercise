@@ -1,4 +1,4 @@
-package a12_ConnectionPool.a1_C3P0_DBCP.a3_Druid;
+package a7_ConnectionPool;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import org.junit.Test;

@@ -16,7 +16,6 @@ import java.sql.*;
  *  > Blob对象：RS.getBlob()
  *  > blob输入流：Blob.getBinaryStream : InputStream
  *  > 从blob输入流读取 二进制数据 写出至 输出流(OutputStream)
- *
  */
 
 public class BLOBInPS {

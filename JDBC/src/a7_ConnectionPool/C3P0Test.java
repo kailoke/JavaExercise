@@ -1,9 +1,9 @@
-package a12_ConnectionPool.a1_C3P0_DBCP;
+package a7_ConnectionPool;
+
+import org.junit.Test;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.mchange.v2.c3p0.DataSources;
-import org.junit.Test;
-
 import java.sql.Connection;
 import java.util.ArrayList;
 

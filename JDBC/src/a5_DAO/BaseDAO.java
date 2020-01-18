@@ -1,16 +1,17 @@
-package a10_DAO;
+package a5_DAO;
 
 import a0_JDBCUtil.JDBCUtil;
-
 import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.ArrayList;
 
-/** BaseDAO : Data Access Object
- *  封针对数据库的通用操作，让数据表类继承获得方法
+/** (Base)DAO : Data Access Object
+ *  抽象类，不需要实例化 abstract
+ *  封针对数据库的通用操作，DB table实现类继承获得通用方法
  */
+
 public abstract class BaseDAO {
-    // 增删改
+    // Update
     public int update(Connection c,String sql, Object... args) {
         PreparedStatement ps = null;
         try {
@@ -29,7 +30,7 @@ public abstract class BaseDAO {
         }
         return 0;
     }
-    // 单行
+    // 单行查询
     public <T> T queryInstance(Connection c, Class<T> clazz, String sql, Object ... args) {
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -60,7 +61,7 @@ public abstract class BaseDAO {
         }
         return null;
     }
-    // 多行
+    // 多行查询
     public <T> ArrayList<T> queryForList(Connection c, Class<T> clazz, String sql, Object ... args) {
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -93,7 +94,7 @@ public abstract class BaseDAO {
         }
         return null;
     }
-    // 标量
+    // 标量查询
     public <E> E getValue(Connection c,String sql,Object... args) {
         PreparedStatement ps = null;
         ResultSet rs = null;

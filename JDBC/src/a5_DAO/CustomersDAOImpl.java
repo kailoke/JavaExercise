@@ -1,4 +1,4 @@
-package a10_DAO;
+package a5_DAO;
 
 import a0_Bean.Customers;
 import org.jetbrains.annotations.NotNull;
@@ -7,10 +7,11 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.util.List;
 
-/*
-    具体实现Customers表的方法
+/**
+ * 具体实现DB Customers表的方法：获取对象属性进行自定义操作
  */
-public class CustomersDAOImpl extends BaseDAO implements CustomersDao {
+
+public class CustomersDAOImpl extends BaseDAO implements CustomersDAO {
     @Override
     public int insert(Connection conn, @NotNull Customers cust) {
         String sql = "insert into customers(name,email,birth) values (?,?,?)";

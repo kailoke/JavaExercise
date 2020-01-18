@@ -1,18 +1,20 @@
-package a11_DAOWithGeneric;
+package a6_GenericDAO;
 
 import a0_JDBCUtil.JDBCUtil;
 import org.jetbrains.annotations.NotNull;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.sql.*;
 import java.util.ArrayList;
 
-/** BaseDAO : Data Access Object
- *  封针对数据库的通用操作，让数据表类继承获得方法
+/** 泛型DAO<T>
+ *  > 1. DAO<T> 让 DB-table 实现类指定自身Bean泛型继承
+ *  > 2. DAO<T> 维护Class<T>对象，提供静态块使继承类初始化其为自身Bean类Class<T>对象
+ *  > 3. DAO<T> 通用方法中使用成员 Class<T>对象 进行反射
  */
-public abstract class BaseDAO<T> {
+
+public abstract class BaseGenericDAO<T> {
     private Class<T> clazz = null;
     // 对象使用方法,this指针指向调用对象
     {
@@ -24,7 +26,8 @@ public abstract class BaseDAO<T> {
         Type[] types = paraType.getActualTypeArguments();
         clazz = (Class<T>) types[0];
     }
-    // 增删改
+
+    // Update
     public int update(Connection c,String sql, Object... args) {
         PreparedStatement ps = null;
         try {
@@ -43,7 +46,7 @@ public abstract class BaseDAO<T> {
         }
         return 0;
     }
-    // 单行
+    // 单行查询
     public T queryInstance(Connection c, String sql, Object ... args) {
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -74,7 +77,7 @@ public abstract class BaseDAO<T> {
         }
         return null;
     }
-    // 多行
+    // 多行查询
     public ArrayList<T> queryForList(Connection c, String sql, Object ... args) {
         PreparedStatement ps = null;
         ResultSet resultSet = null;
@@ -107,7 +110,7 @@ public abstract class BaseDAO<T> {
         }
         return null;
     }
-    // scalar query
+    // 标量查询，泛型方法，调用时根据声明返回值类型强转
     public <E> E getValue(@NotNull Connection c, String sql, Object... args) {
         PreparedStatement ps = null;
         ResultSet rs = null;

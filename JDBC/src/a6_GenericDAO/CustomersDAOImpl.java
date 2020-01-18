@@ -1,16 +1,17 @@
-package a11_DAOWithGeneric;
+package a6_GenericDAO;
 
 import a0_Bean.Customers;
+import a5_DAO.CustomersDAO;
 import org.jetbrains.annotations.NotNull;
-
 import java.sql.Connection;
 import java.sql.Date;
 import java.util.List;
 
-/*
-    具体实现Customers表的方法
+/**
+ * 每个DB-table实现类指定继承DAO<T>为自身处理的Bean类
  */
-public class CustomersDAOImpl extends BaseDAO<Customers> implements CustomersDao {
+
+public class CustomersDAOImpl extends BaseGenericDAO<Customers> implements CustomersDAO {
     @Override
     public int insert(Connection conn, @NotNull Customers cust) {
         String sql = "insert into customers(name,email,birth) values (?,?,?)";
