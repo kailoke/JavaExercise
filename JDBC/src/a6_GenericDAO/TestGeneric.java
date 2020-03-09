@@ -1,7 +1,6 @@
 package a6_GenericDAO;
 
 import org.junit.Test;
-
 import a0_Bean.Customers;
 import a0_JDBCUtil.JDBCUtil;
 import java.sql.Connection;

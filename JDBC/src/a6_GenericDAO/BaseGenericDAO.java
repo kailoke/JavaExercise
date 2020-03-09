@@ -1,7 +1,7 @@
 package a6_GenericDAO;
 
 import a0_JDBCUtil.JDBCUtil;
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.internal.NotNull;
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

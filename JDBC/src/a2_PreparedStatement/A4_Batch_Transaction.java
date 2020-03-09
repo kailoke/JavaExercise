@@ -6,6 +6,7 @@ import a0_JDBCUtil.JDBCUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /** Batch批量插入
  * 一、PreparedStatement：addBatch() / executeBatch() / clearBatch()
@@ -96,5 +97,26 @@ public class A4_Batch_Transaction {
         }
         long end = System.currentTimeMillis();
         System.out.println("花费时间：" + (end-start));
+    }
+
+    @Test
+    public void differentSQL() {
+        Connection conn = JDBCUtil.getConnection();
+        String sql1 = "insert into user values(null,'小张',10,'男','123')";
+        String sql2 = "insert into account values(null,'ccc','1000')";
+
+        Statement ps = null;
+        try {
+            conn.setAutoCommit(false);
+            ps = conn.createStatement();
+            ps.addBatch(sql1);
+            ps.addBatch(sql2);
+            ps.executeBatch();
+            conn.commit();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtil.close(conn,ps);
+        }
     }
 }

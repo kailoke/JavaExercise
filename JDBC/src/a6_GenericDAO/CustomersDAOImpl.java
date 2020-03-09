@@ -2,7 +2,6 @@ package a6_GenericDAO;
 
 import a0_Bean.Customers;
 import a5_DAO.CustomersDAO;
-import org.jetbrains.annotations.NotNull;
 import java.sql.Connection;
 import java.sql.Date;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class CustomersDAOImpl extends BaseGenericDAO<Customers> implements CustomersDAO {
     @Override
-    public int insert(Connection conn, @NotNull Customers cust) {
+    public int insert(Connection conn,Customers cust) {
         String sql = "insert into customers(name,email,birth) values (?,?,?)";
         return update(conn, sql, cust.getName(), cust.getEmail(), cust.getBirth());
     }
@@ -25,7 +24,7 @@ public class CustomersDAOImpl extends BaseGenericDAO<Customers> implements Custo
     }
 
     @Override
-    public int update(Connection conn, @NotNull Customers cust) {
+    public int update(Connection conn, Customers cust) {
         String sql = "update customers set name=?,email=?,birth=? where id=?";
         return update(conn, sql, cust.getName(), cust.getEmail(), cust.getBirth(), cust.getId());
     }

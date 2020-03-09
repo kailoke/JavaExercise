@@ -50,9 +50,9 @@ public class ThreadPool {
             }
         });
         // 2.1 Executors.submit(Callable<T> call)
-        service.submit(new Callable<>() {
+        service.submit(new Callable<Object>() {
             @Override
-            public Object call() throws Exception {
+            public Object call() {
                 System.out.println("submit");
                 return null;
             }
