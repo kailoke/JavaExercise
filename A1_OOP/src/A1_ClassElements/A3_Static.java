@@ -1,6 +1,6 @@
-package A1_ClassStructures;
+package A1_ClassElements;
 
-public class A4_Final {
+public class A3_Static {
     public static void main(String[] args) {
 
     }

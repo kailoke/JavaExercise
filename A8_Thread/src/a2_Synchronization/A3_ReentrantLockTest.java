@@ -16,13 +16,14 @@ import java.util.concurrent.locks.ReentrantLock;
  * > 2.作用域大小
  *      > synchronized 代码块锁和方法锁
  *      > ReentrantLock 代码块锁
- * > 3.性能与效率 : Lock的性能更好，JDK类具有更好的扩展性
+ * > 3.性能与效率 : Lock的性能更好(JDK类具有更好的扩展性)
+ *      > synchronized依靠jvm实现
  * > 4.锁的公平性
  *      > synchronized 只能是非公平锁
  *      > ReentrantLock可以指定公平锁或非公平锁
  * > 5.线程唤醒：
  *      > synchronized 唤醒一个随机线程 || 唤醒全部线程
- *      > ReentrantLock可以分组唤醒唤醒
+ *      > ReentrantLock可以分组唤醒
  */
 
 public class A3_ReentrantLockTest {

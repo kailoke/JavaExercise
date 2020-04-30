@@ -1,4 +1,4 @@
-package A1_ClassStructures;
+package A1_ClassElements;
 
 /** == 和 equals() 区别
  *  一、== 操作符

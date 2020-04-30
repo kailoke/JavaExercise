@@ -6,16 +6,16 @@ import java.util.*;
 /** Collection 静态内存数据结构
  * 一、java集合框架(容器)
  *  |----Collection大接口：单列数据，存储一个一个的对象
- *      |____List子接口(继承):存储有序、可重复的数据                <动态数组></动态数组>
+ *      |____List子接口(继承):存储有序、可重复的数据              <动态数组>
  *          |----实现类：ArrayList
  *                      LinkedList
  *                      Vector
- *      |____Set子接口(继承):存储无序、不可重复的数据               <集合></集合>
+ *      |____Set子接口(继承):存储无序、不可重复的数据             <集合>
  *          |----实现类：HashSet ____LinkedHashSet(继承)
  *                      SortedSet---TreeSet(实现)
  *      |____Queue子接口(继承)
  *
- *  |----Map接口：双列数据，存储具有映射关系“Key-value”对的数据    <键值对></键值对>
+ *  |----Map接口：双列数据，存储具有映射关系“Key-value”对的数据    <键值对>
  *      |----实现类：HashMap ____LinkedHashMap(继承)
  *                  Hashtable___Properties(继承)
  *                  TreeSorted--TreeMap(实现)

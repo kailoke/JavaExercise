@@ -1,4 +1,4 @@
-package A1_ClassStructures;
+package A1_ClassElements;
 
 /** InnerClass
  * 一、静态内部类

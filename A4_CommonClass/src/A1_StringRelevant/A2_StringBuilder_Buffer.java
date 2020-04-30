@@ -33,7 +33,7 @@ import org.junit.Test;
  *  反转  reverse() : 反转当前字符序列
  */
 
-public class StringBuffer_StringBuilder {
+public class A2_StringBuilder_Buffer {
     @Test
     public void StringBufferTest(){
         StringBuffer sb1 = new StringBuffer("abc");
@@ -77,14 +77,14 @@ public class StringBuffer_StringBuilder {
 
         startTime = System.currentTimeMillis();
         for (int i = 0; i < 20000; i++) {
-            buffer.append(String.valueOf(i));
+            buffer.append(i);
         }
         endTime = System.currentTimeMillis();
         long bufferTime = endTime - startTime;
 
         startTime = System.currentTimeMillis();
         for (int i = 0; i < 20000; i++) {
-            builder.append(String.valueOf(i));
+            builder.append(i);
         }
         endTime = System.currentTimeMillis();
         long builderTime = endTime - startTime;

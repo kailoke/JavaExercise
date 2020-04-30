@@ -3,6 +3,7 @@ package A4_Map;
 import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /** HashMap 底层实现
  * 一、JDK7.0     new HashMap()
@@ -17,13 +18,13 @@ import java.util.Map;
  *  > HashMap底层: Entry数组 + Entry链表
  *  > 扩容：当 size() > threshold == length * loadFactor 进行2倍扩容，并将原数组中的数据重新计算放入
  *
- * 二、JDK8.0     HashMap
- *  >1.new HashMap():底层不再直接创建长度==16的数组；首次调用put()，底层创建长度==16的数组(LazyLoad)
+ * 二、JDK8.0     new HashMap()
+ *  >1.底层不再直接创建长度==16的数组，仅指定LoafFactor=0.75；首次调用put()，底层创建长度==16的数组(LazyLoad)
  *  >2.底层数组是 Node[] implements Entry[]，子节点可以是 Node，也可以是 TreeNode ( 树化时转变)
  *  >3.HashMap底层: Node数组 + 链表 + 红黑树
  *      > 当桶的元素以 链表形式存在数据个数 > TREEIFY_THRESHOLD(8) && 数组长度 > MIN_TREEIFY_CAPACITY(64)
- *          ↑此索引位置上的所有数据改为使用红黑树存储。                                 ↑ 否则扩容
- *  >4.JDK8.0重新设计HashMap为了增加其查找速度，使HashSet中的元素散列 + 有序查找(树)
+ *          ↑此索引位置上的所有数据改为使用红黑树存储。                                 ↑ 否则resize()
+ *  *  >4.JDK8.0重新设计HashMap为了增加其查找速度，使HashSet中的元素散列 + 有序查找(树)
  */
 
 

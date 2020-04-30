@@ -1,4 +1,4 @@
-package a8_AOP_CallBack;
+package a8_AOP;
 
 import a6_StaticProxy.Singer;
 import a6_StaticProxy.A2_Star;
@@ -6,14 +6,8 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-/** 动态代理
- * 一、根据加载到内存中的被代理类，创建代理类对象
- *
- * 二、代理类对象动态调用被代理类中的同名方法
- *
- */
 
-public class AOPTest {
+public class AOP {
     public static void main(String[] args) {
         Human proxyInstance = (Human) ProxyMan.getProxyInstance(new SuperMan());
         System.out.println(proxyInstance.getBelief());  // println最后发生，结果已在回调中获取

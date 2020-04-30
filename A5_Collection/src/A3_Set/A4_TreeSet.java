@@ -5,14 +5,16 @@ import org.junit.Test;
 import java.util.Comparator;
 import java.util.TreeSet;
 /** TreeSet : 使集合元素处于排序(SortedSet)状态，有序：查询速度快
- *  > 1. 底层是"红黑树"数据结构，2-3树的简单实现
- *  > 2. 要进行对象排序，则该对象的类必须实现 Comparable
- *      > implements Comparable and @Override compareTo(Object obj)
+ * 一、原理：底层是"红黑树"数据结构，2-3树的简单实现
+ *
+ * 二、排序方法：
+ *  > 1. 自然排序：implements Comparable
+ *      > 调用对象的compareTo()方法比较值，默认升序排序
+ *  > 2. 定制排序：构造TreeSet时传入比较器实例，则相等标准变为 Comparator 的 compare() 方法
+ *      > new Comparator(){@Override compare(Obj,Obj)} )
+ *
  *  > 3. 因为只能有相同类的对象才能比较大小，所以TreeSet中不能添加不同类对象
  *  > 4. TreeSet集合判断两个对象是否相等的标准：两个对象 compare(Object obj)方法比较返回值
- *  > 5. 自然排序：调用对象的compareTo()方法获得对象值后，默认升序排序
- *  > 6. 定制排序：构造TreeSet时传入比较器，则相等标准变为 Comparator 的 compare() 方法
- *      > new Comparator(){@Override compare(Obj,Obj)} )
  */
 public class A4_TreeSet {
     @Test

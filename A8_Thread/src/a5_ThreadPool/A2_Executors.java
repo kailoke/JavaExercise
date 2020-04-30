@@ -3,11 +3,7 @@ package a5_ThreadPool;
 import java.util.concurrent.*;
 
 /** 线程池 : 管理线程的创建、运行、销毁
- * 一、线程池的组成：
- *  > 线程们(Threads) : 存放线程
- *  > 任务仓库(BlockingQueue)：分发任务(Runnable! || Callable!)
- *      > 阻塞队列：队列空时 = 获取阻塞，队列满时 = 放入阻塞
- *                add,offer(阻塞),put  remove,poll(阻塞),take
+ *
  * 一、ExecuteService：真正的线程池接口，常见子类：ThreadPoolExecutor
  *  > void execute(Runnable command) : 执行任务/命令，一般执行Runnable
  *  > <T> Future<T> submit(Callable<T> task)：执行任务，泛型返回值，一般执行Callable
@@ -30,10 +26,10 @@ import java.util.concurrent.*;
  */
 
 
-public class ThreadPool {
+public class A2_Executors {
     public static void main(String[] args) {
         // 1.通过Executors工厂类获得线程池对象
-        ExecutorService service = Executors.newFixedThreadPool(10);
+        ExecutorService service = java.util.concurrent.Executors.newFixedThreadPool(10);
         // 2.1 Executors.execute(Runnable run)
         service.execute(new Runnable() {
             @Override
